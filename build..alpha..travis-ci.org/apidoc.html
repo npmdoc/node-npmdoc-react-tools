@@ -1,0 +1,164 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+        href="https://facebook.github.io/react"
+
+    >react-tools (v0.13.3)</a>
+</h1>
+<h4>A set of complementary tools to React, including the JSX transformer.</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.react-tools">module react-tools</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.react-tools.transform">
+            function <span class="apidocSignatureSpan">react-tools.</span>transform
+            <span class="apidocSignatureSpan">(input, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.react-tools.transformWithDetails">
+            function <span class="apidocSignatureSpan">react-tools.</span>transformWithDetails
+            <span class="apidocSignatureSpan">(input, options)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.react-tools" id="apidoc.module.react-tools">module react-tools</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.react-tools.transform" id="apidoc.element.react-tools.transform">
+        function <span class="apidocSignatureSpan">react-tools.</span>transform
+        <span class="apidocSignatureSpan">(input, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">transform = function (input, options) {
+  options = processOptions(options);
+  var output = innerTransform(input, options);
+  var result = output.code;
+  if (options.sourceMap) {
+    var map = inlineSourceMap(
+      output.sourceMap,
+      input,
+      options.filename
+    );
+    result += &#x27;\n&#x27; + map;
+  }
+  return result;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+`es6module` | `true`: parses the file as an ES6 module | `false`
+`nonStrictEs6module` | `true`: parses the file as an ES6 module, except disables implicit strict-mode (i.e. CommonJS modules et
+al are allowed) | `false`
+`target` | `&#x22;es3&#x22;`: ECMAScript 3&#x3c;br&#x3e;`&#x22;es5&#x22;`: ECMAScript 5| `&#x22;es5&#x22;`
+
+```js
+var reactTools = require(&#x27;react-tools&#x27;);
+
+reactTools.<span class="apidocCodeKeywordSpan">transform</span>(string, options);
+```
+
+### `transformWithDetails(inputString, options)`
+
+Just like `transform`, but outputs an object:
+```js
+{
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.react-tools.transformWithDetails" id="apidoc.element.react-tools.transformWithDetails">
+        function <span class="apidocSignatureSpan">react-tools.</span>transformWithDetails
+        <span class="apidocSignatureSpan">(input, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">transformWithDetails = function (input, options) {
+  options = processOptions(options);
+  var output = innerTransform(input, options);
+  var result = {};
+  result.code = output.code;
+  if (options.sourceMap) {
+    result.sourceMap = output.sourceMap.toJSON();
+  }
+  if (options.filename) {
+    result.sourceMap.sources = [options.filename];
+  }
+  return result;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
