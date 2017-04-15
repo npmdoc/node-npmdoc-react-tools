@@ -1,11 +1,13 @@
 # api documentation for  [react-tools (v0.13.3)](https://facebook.github.io/react)  [![npm package](https://img.shields.io/npm/v/npmdoc-react-tools.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-react-tools) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-react-tools.svg)](https://travis-ci.org/npmdoc/node-npmdoc-react-tools)
 #### A set of complementary tools to React, including the JSX transformer.
 
-[![NPM](https://nodei.co/npm/react-tools.png?downloads=true)](https://www.npmjs.com/package/react-tools)
+[![NPM](https://nodei.co/npm/react-tools.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/react-tools)
 
-[![apidoc](https://npmdoc.github.io/node-npmdoc-react-tools/build/screen-capture.buildNpmdoc.browser._2Fhome_2Ftravis_2Fbuild_2Fnpmdoc_2Fnode-npmdoc-react-tools_2Ftmp_2Fbuild_2Fapidoc.html.png)](https://npmdoc.github.io/node-npmdoc-react-tools/build..beta..travis-ci.org/apidoc.html)
+[![apidoc](https://npmdoc.github.io/node-npmdoc-react-tools/build/screenCapture.buildCi.browser.apidoc.html.png)](https://npmdoc.github.io/node-npmdoc-react-tools/build/apidoc.html)
 
-![package-listing](https://npmdoc.github.io/node-npmdoc-react-tools/build/screen-capture.npmPackageListing.svg)
+![npmPackageListing](https://npmdoc.github.io/node-npmdoc-react-tools/build/screenCapture.npmPackageListing.svg)
+
+![npmPackageDependencyTree](https://npmdoc.github.io/node-npmdoc-react-tools/build/screenCapture.npmPackageDependencyTree.svg)
 
 
 
@@ -113,18 +115,15 @@
     "main": "main.js",
     "maintainers": [
         {
-            "name": "zpao",
-            "email": "paul@oshannessy.com"
+            "name": "zpao"
         },
         {
-            "name": "jeffmo",
-            "email": "jeff@anafx.com"
+            "name": "jeffmo"
         }
     ],
     "name": "react-tools",
     "optionalDependencies": {},
     "preferGlobal": true,
-    "readme": "ERROR: No README data found!",
     "repository": {
         "type": "git",
         "url": "git+https://github.com/facebook/react.git"
