@@ -74,6 +74,32 @@
 
     </ol></li>
 
+    <li class="apidocModuleLi"><a href="#apidoc.module.react-tools.transform">module react-tools.transform</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.react-tools.transform.transform">
+            function <span class="apidocSignatureSpan">react-tools.</span>transform
+            <span class="apidocSignatureSpan">(input, options)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.react-tools.transformWithDetails">module react-tools.transformWithDetails</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.react-tools.transformWithDetails.transformWithDetails">
+            function <span class="apidocSignatureSpan">react-tools.</span>transformWithDetails
+            <span class="apidocSignatureSpan">(input, options)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
 </ol></div>
 
 <div class="apidocSectionDiv">
@@ -125,6 +151,84 @@ Just like `transform`, but outputs an object:
 
     <h2>
         <a href="#apidoc.element.react-tools.transformWithDetails" id="apidoc.element.react-tools.transformWithDetails">
+        function <span class="apidocSignatureSpan">react-tools.</span>transformWithDetails
+        <span class="apidocSignatureSpan">(input, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">transformWithDetails = function (input, options) {
+  options = processOptions(options);
+  var output = innerTransform(input, options);
+  var result = {};
+  result.code = output.code;
+  if (options.sourceMap) {
+    result.sourceMap = output.sourceMap.toJSON();
+  }
+  if (options.filename) {
+    result.sourceMap.sources = [options.filename];
+  }
+  return result;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.react-tools.transform" id="apidoc.module.react-tools.transform">module react-tools.transform</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.react-tools.transform.transform" id="apidoc.element.react-tools.transform.transform">
+        function <span class="apidocSignatureSpan">react-tools.</span>transform
+        <span class="apidocSignatureSpan">(input, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">transform = function (input, options) {
+  options = processOptions(options);
+  var output = innerTransform(input, options);
+  var result = output.code;
+  if (options.sourceMap) {
+    var map = inlineSourceMap(
+      output.sourceMap,
+      input,
+      options.filename
+    );
+    result += '\n' + map;
+  }
+  return result;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+`es6module` | `true`: parses the file as an ES6 module | `false`
+`nonStrictEs6module` | `true`: parses the file as an ES6 module, except disables implicit strict-mode (i.e. CommonJS modules et
+al are allowed) | `false`
+`target` | `"es3"`: ECMAScript 3&lt;br&gt;`"es5"`: ECMAScript 5| `"es5"`
+
+```js
+var reactTools = require('react-tools');
+
+reactTools.<span class="apidocCodeKeywordSpan">transform</span>(string, options);
+```
+
+### `transformWithDetails(inputString, options)`
+
+Just like `transform`, but outputs an object:
+```js
+{
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.react-tools.transformWithDetails" id="apidoc.module.react-tools.transformWithDetails">module react-tools.transformWithDetails</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.react-tools.transformWithDetails.transformWithDetails" id="apidoc.element.react-tools.transformWithDetails.transformWithDetails">
         function <span class="apidocSignatureSpan">react-tools.</span>transformWithDetails
         <span class="apidocSignatureSpan">(input, options)</span>
         </a>
