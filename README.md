@@ -3,7 +3,9 @@
 
 [![NPM](https://nodei.co/npm/react-tools.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/react-tools)
 
-[![apidoc](https://npmdoc.github.io/node-npmdoc-react-tools/build/screenCapture.buildCi.browser.apidoc.html.png)](https://npmdoc.github.io/node-npmdoc-react-tools/build/apidoc.html)
+- [https://npmdoc.github.io/node-npmdoc-react-tools/build/apidoc.html](https://npmdoc.github.io/node-npmdoc-react-tools/build/apidoc.html)
+
+[![apidoc](https://npmdoc.github.io/node-npmdoc-react-tools/build/screenCapture.buildCi.browser.%252Ftmp%252Fbuild%252Fapidoc.html.png)](https://npmdoc.github.io/node-npmdoc-react-tools/build/apidoc.html)
 
 ![npmPackageListing](https://npmdoc.github.io/node-npmdoc-react-tools/build/screenCapture.npmPackageListing.svg)
 
@@ -136,80 +138,6 @@
     },
     "version": "0.13.3"
 }
-```
-
-
-
-# <a name="apidoc.tableOfContents"></a>[table of contents](#apidoc.tableOfContents)
-
-#### [module react-tools](#apidoc.module.react-tools)
-1.  [function <span class="apidocSignatureSpan">react-tools.</span>transform (input, options)](#apidoc.element.react-tools.transform)
-1.  [function <span class="apidocSignatureSpan">react-tools.</span>transformWithDetails (input, options)](#apidoc.element.react-tools.transformWithDetails)
-
-
-
-# <a name="apidoc.module.react-tools"></a>[module react-tools](#apidoc.module.react-tools)
-
-#### <a name="apidoc.element.react-tools.transform"></a>[function <span class="apidocSignatureSpan">react-tools.</span>transform (input, options)](#apidoc.element.react-tools.transform)
-- description and source-code
-```javascript
-transform = function (input, options) {
-  options = processOptions(options);
-  var output = innerTransform(input, options);
-  var result = output.code;
-  if (options.sourceMap) {
-    var map = inlineSourceMap(
-      output.sourceMap,
-      input,
-      options.filename
-    );
-    result += '\n' + map;
-  }
-  return result;
-}
-```
-- example usage
-```shell
-...
-'es6module' | 'true': parses the file as an ES6 module | 'false'
-'nonStrictEs6module' | 'true': parses the file as an ES6 module, except disables implicit strict-mode (i.e. CommonJS modules et
-al are allowed) | 'false'
-'target' | '"es3"': ECMAScript 3<br>'"es5"': ECMAScript 5| '"es5"'
-
-'''js
-var reactTools = require('react-tools');
-
-reactTools.transform(string, options);
-'''
-
-### 'transformWithDetails(inputString, options)'
-
-Just like 'transform', but outputs an object:
-'''js
-{
-...
-```
-
-#### <a name="apidoc.element.react-tools.transformWithDetails"></a>[function <span class="apidocSignatureSpan">react-tools.</span>transformWithDetails (input, options)](#apidoc.element.react-tools.transformWithDetails)
-- description and source-code
-```javascript
-transformWithDetails = function (input, options) {
-  options = processOptions(options);
-  var output = innerTransform(input, options);
-  var result = {};
-  result.code = output.code;
-  if (options.sourceMap) {
-    result.sourceMap = output.sourceMap.toJSON();
-  }
-  if (options.filename) {
-    result.sourceMap.sources = [options.filename];
-  }
-  return result;
-}
-```
-- example usage
-```shell
-n/a
 ```
 
 
