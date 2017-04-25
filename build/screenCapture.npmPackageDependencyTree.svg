@@ -22,7 +22,7 @@
 <tspan x="10" y="314">  │ │ ├── once@1.4.0 </tspan>
 <tspan x="10" y="330">  │ │ └── path-is-absolute@1.0.1 </tspan>
 <tspan x="10" y="346">  │ ├── graceful-fs@4.1.11 </tspan>
-<tspan x="10" y="362">  │ ├── iconv-lite@0.4.15 </tspan>
+<tspan x="10" y="362">  │ ├── iconv-lite@0.4.16 </tspan>
 <tspan x="10" y="378">  │ ├─┬ mkdirp@0.5.1 </tspan>
 <tspan x="10" y="394">  │ │ └── minimist@0.0.8 </tspan>
 <tspan x="10" y="410">  │ ├── private@0.1.7 </tspan>
