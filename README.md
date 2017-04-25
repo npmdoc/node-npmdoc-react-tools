@@ -1,4 +1,7 @@
-# api documentation for  [react-tools (v0.13.3)](https://facebook.github.io/react)  [![npm package](https://img.shields.io/npm/v/npmdoc-react-tools.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-react-tools) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-react-tools.svg)](https://travis-ci.org/npmdoc/node-npmdoc-react-tools)
+# npmdoc-react-tools
+
+#### basic api documentation for  [react-tools (v0.13.3)](https://facebook.github.io/react)  [![npm package](https://img.shields.io/npm/v/npmdoc-react-tools.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-react-tools) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-react-tools.svg)](https://travis-ci.org/npmdoc/node-npmdoc-react-tools)
+
 #### A set of complementary tools to React, including the JSX transformer.
 
 [![NPM](https://nodei.co/npm/react-tools.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/react-tools)
